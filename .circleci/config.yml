@@ -48,6 +48,9 @@ jobs:
       - attach_workspace:
           at: /tmp
       - run:
+          name: "Set Netlify Token env variable"
+          command: export NETLIFY_AUTH_TOKEN=${NETLIFY_AUTH_TOKEN}    
+      - run:
           name: Netlify Install 
           command: yarn add netlify-cli -D
       - run:
